@@ -180,6 +180,18 @@
             }
 
         }
+        function handleClick(i) {
+            if (gameOver) return;
+            const id = Number(i.id);
+            if (array[id] !== null) return;
+            array[id] = player;
+            i.innerText = player;
+            winner();
+            if (gameOver) return;
+            player = player === "X" ? "O" : "X";
+            document.getElementById("turn").innerText = player;
+
+        }
 
         function handleClick(i) {
             if (gameOver) return;
